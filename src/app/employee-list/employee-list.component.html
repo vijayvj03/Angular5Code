@@ -1,0 +1,32 @@
+<button [routerLink]="['/addEmployee']">
+  Create Employee
+</button>
+<table>
+  <thead>
+    <th>EmployeeID</th>
+    <th>FirstName</th>
+    <th>LastName</th>
+    <th>EmpCode</th>
+    <th>Position</th>
+    <th>Office</th>
+    <th>Action</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let employee of employeeList">
+      <td>{{employee.EmployeeID}}</td>
+      <td>{{employee.FirstName}}</td>
+      <td>{{employee.LastName}}</td>
+      <td>{{employee.EmpCode}}</td>
+      <td>{{employee.Position}}</td>
+      <td>{{employee.Office}}</td>
+      <td>
+        <a class="btn"(click)="callEdit(employee.EmployeeID)">
+          <i class="fa fa-pencil-square-o"></i>
+        </a>
+        <a class="btn text-danger" (click)="delete(employee.EmployeeID)">
+          <i class="fa fa-trash-o"></i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
